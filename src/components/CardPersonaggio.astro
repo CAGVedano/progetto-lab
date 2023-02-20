@@ -1,0 +1,20 @@
+---
+
+const { personaggio } = Astro.props;
+
+const avatarUrl = "../imgs/personaggi/" + personaggio.avatar;
+---
+
+<div class="map">
+    <div class="flex flex-col items-center justify-center space-y-2 py-12 px-12">
+        <img class="h-96 w-full object-contain" src={avatarUrl}/>
+        <h2>{personaggio.name} <span>{personaggio.gender}</span></h2>
+        <div class="flex space-x-2 text-dark-gray">
+            <div>{personaggio.race}</div><span class="mx-1">-</span>  
+            <div>{personaggio.class}</div><span class="mx-1">-</span>  
+            <div>{personaggio.background}</div>
+        </div>
+        <div class="book w-full">
+        </div>
+    </div>
+</div>
