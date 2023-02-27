@@ -1,0 +1,21 @@
+<button id="dice" class="button py-2 px-4 text-lg whitespace-nowrap"
+>Tira il D20!</button>
+<div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg hidden"
+    id="diceResult"
+>Nessun risultato</div>
+
+<script>
+    const diceButton = document.getElementById("dice");
+    const diceResult = document.getElementById("diceResult");
+
+    function throwDice() {
+        var seed = Math.random();
+        var res = Math.floor(seed * 20) + 1;
+        diceResult.innerHTML= "<p class=\"text-white font-black text-3xl\">" + res + "</p>";
+        diceResult.classList.remove("hidden");
+        console.log(res);
+        return res;
+    }
+    
+    diceButton.addEventListener("click", throwDice);
+</script>

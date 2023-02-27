@@ -1,6 +1,7 @@
 ---
 import CardPersonaggio from "~/components/CardPersonaggio.astro";
 import Base from "~/layouts/Base.astro";
+import Dice from "../components/Dice.astro";
 
 const item_files = await Astro.glob(`../../public/imgs/items/*`)
 const painting_files = await Astro.glob(`../../public/imgs/paintings/*`)
@@ -38,5 +39,6 @@ const getUrl = (personaggio) => {
         </ul>
     </div>
     <a href="/docs" class="self-center py-2 px-5 my-5 button text-shadow-lg text-2xl">Get started</a>
+    <Dice/>
 </div>
 </Base>
