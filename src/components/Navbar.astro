@@ -7,13 +7,15 @@ const {
 <header
     class:list={[
         classProp,
-        `[--nav-height:3] h-[calc(var(--block-size)_*_var(--nav-height))] md:[--nav-height:2] w-full bg-block-dirt`
+        `[--nav-height:3] h-[calc(var(--block-size)_*_var(--nav-height))] md:[--nav-height:2] w-full bg-block-stone`
     ]}
 >
-    <div class="h-full w-full bg-block-grass-side bg-repeat-x">
+    <div class="h-full w-full bg-block-redstone-ore bg-repeat-x">
         <div class="flex flex-col md:flex-row items-center justify-end h-full w-full p-5 pt-0 md:pb-0 bg-cover bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.25)]">
             <!-- <a href="/" class="h-auto w-6-block md:w-9-block mx-auto md:ml-0"><img src="/imgs/project-logo.png" alt="logo" class=""/></a> -->
-            <a href="/" class="h-auto w-6-block md:w-9-block mx-auto md:ml-0 text-white text-3xl font-minecraft-evenings">D<img class="h-8 z-10 inline -ml-1 -mt-2" src="https://cdn.discordapp.com/attachments/1049251741792731196/1074650340672159825/image0.jpg"/><span class="z-10 -ml-4">D</span> brainstorming</a>
+            <a href="/" class="h-auto w-6-block whitespace-nowrap md:w-9-block mx-auto md:ml-0 text-white text-3xl font-minecraft-evenings">
+                D<img class="h-8 z-10 inline -ml-1 -mt-2" src="https://cdn.discordapp.com/attachments/1049251741792731196/1074650340672159825/image0.jpg"/><span class="z-10 -ml-4">D</span> brainstorming
+            </a>
             <nav class="flex items-center justify-end w-full md:w-min gap-3 text-2xl text-white">
                 <slot />
                 <a href="/" class="hover:underline">Home</a>
