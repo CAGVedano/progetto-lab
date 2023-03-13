@@ -9,18 +9,20 @@ const {
 
 <footer class:list={[
     classProp,
-    "[--footer-height:6] h-[calc(var(--block-size)*var(--footer-height))] xs:[--footer-height:5] sm:[--footer-height:4] md:[--footer-height:3] w-full bg-block-bedrock"
+    "[--footer-height:6] h-[calc(var(--block-size)*var(--footer-height))] xs:[--footer-height:5] sm:[--footer-height:4] md:[--footer-height:3] w-full bg-block-wool-red"
 ]}>
     <div class="flex flex-col sm:flex-row items-center justify-between h-full p-5 bg-dark-75 text-white">
         <header class="flex flex-col gap-3 w-full sm:w-[60%]">
-            <img src="/imgs/project-logo.png" class="h-full max-w-[30ch] m-[-14px]" />
-            <p class="text-sm">Show off your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is the Minecraft Theme for Astro</p>
+            <a href="/" class="h-full w-6-block m-[-14px] whitespace-nowrap md:w-9-block mx-auto md:ml-0 text-white text-3xl font-minecraft-evenings">
+                D<img class="h-8 z-10 inline -ml-1 -mt-2" src="https://cdn.discordapp.com/attachments/1049251741792731196/1074650340672159825/image0.jpg"/><span class="z-10 -ml-4">D</span> brainstorming
+            </a>
+            <!-- <img src="/imgs/project-logo.png" class="h-full max-w-[30ch] m-[-14px]" /> -->
+            <p class="text-sm">Sito sviluppato dai famosissimi developer di Internet Filippo, Nicolò e "Francesco" a volte.</p>
         </header>
-        <nav class="self-end flex flex-col items-end gap-1 text-link">
-            <a href="https://github.com/BryceRussell/astro-minecraft-theme" class="link">Download</a>
-            <a href="https://github.com/BryceRussell" class="link">Github</a>
-            <a href="https://astro.build" class="link">Astro</a>
-            <a href="https://discord.com/invite/grF4GTXXYm" class="link">Discord</a>
+        <nav class="self-start flex flex-col items-end gap-1 text-link">
+            <a href="https://discord.gg/sMJjPADS8G" target="_blank" class="link">Discord</a>
+            <a href="https://github.com/CAGVedano" target="_blank" class="link">Github</a>
+            <a href="/docs" class="link">Docs</a>
         </nav>
     </div>
 </footer>
