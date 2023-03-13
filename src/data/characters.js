@@ -1,4 +1,4 @@
-const personaggi = [
+var characters = [
     {
         id: 1,
         name: "Miðgarðsormr",
@@ -6,7 +6,7 @@ const personaggi = [
         race:"dragonide",
         class:"barbaro",
         gender:"maschio",
-        background:"eremita"
+        background:"eremita",
     },
     {
         id: 2,
@@ -33,7 +33,8 @@ const personaggi = [
         race:"gatto",
         class:"paladino",
         gender:"maschio",
-        background:"ladro"
+        background:"ladro",
+        descrizione: "E' un abile spadaccino e agile come ogni altro felino. Riesce ad abbassare la guardia di ogni avversario grazie ai suoi grandi occhi verdi. Gatto è considerato da molti un ladro e mascalzone; in realtà, vive le sue avventure seguendo ferree regole morali di cavalleria, ed è un abile donnaiolo."
     },
     {
         id: 5,
@@ -46,4 +47,11 @@ const personaggi = [
     },
 ];
 
-export { personaggi };
+characters = characters.map( character => {
+    return {
+        ...character,
+        avatar: "/imgs/characters/" + character.avatar
+    }
+})
+
+export { characters };

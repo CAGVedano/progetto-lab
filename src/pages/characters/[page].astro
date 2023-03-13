@@ -1,24 +1,26 @@
 ---
-import CardPersonaggio from "~/components/CardPersonaggio.astro";
+import CharacterCard from "~/components/CharacterCard.astro";
 import Base from "~/layouts/Base.astro";
-import { personaggi } from "~/data/personaggi";
+import { characters } from "~/data/characters";
 
 export async function getStaticPaths({ paginate }) {
   // Generate pages from our array of astronauts, with 2 to a page
-  return paginate(personaggi, { pageSize: 1 });
+  return paginate(characters, { pageSize: 1 });
 }
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props;
 
 ---
-<Base>
+<Base
+  title={page.data[0].name}
+>
     <div class="max-w-lg mx-auto py-12">
-      <CardPersonaggio 
-        personaggio={page.data[0]}
+      <CharacterCard 
+        character={page.data[0]}
       />
     </div>
 
-    <div class="text-3xl text-white flex justify-between py-12 px-12">    
+    <div class="text-3xl text-white flex justify-between py-12 max-w-xl mx-auto px-8">    
       {page.url.prev ? 
         <div class="flex flex-col">
           <a href={page.url.prev}>&lt;---</a>

@@ -1,0 +1,36 @@
+---
+
+---
+
+<button id="characterPicker" class="button py-2 px-4 text-lg whitespace-nowrap block w-5-block mx-auto"
+>Personaggio casuale</button>
+
+<div class="mt-4 mx-auto h-2-block w-2-block px-1 leading-[1.25rem] text-lg relative" 
+>
+    <img src="/imgs/paintings/pointer.png" id="characterPickerResult" class="object-contain w-full h-full">
+</div>
+<div id="characterName" class="mt-2 w-full text-center hidden"></div>
+
+<script>
+    const characterPicker = document.getElementById("characterPicker");
+    const characterPickerResult = document.getElementById("characterPickerResult");
+    const characterName = document.getElementById("characterName");
+
+    var response = await fetch("/characters.json");
+    const characters = await response.json();
+
+    function getCharacter() {
+        var seed = Math.random();
+        var res = Math.floor(seed * characters.length);
+        var character = characters[res];
+        characterPickerResult.src=character.avatar;
+        characterName.innerHTML=character.name;
+        characterName.classList.remove('hidden');
+        characterPickerResult.classList.remove('object-contain');
+        characterPickerResult.classList.add('object-cover','cursor-pointer');
+        characterPickerResult.onclick = () => { window.location.href="/characters/" + character.id; };
+        return res;
+    }
+    
+    characterPicker.addEventListener("click", getCharacter);
+</script>

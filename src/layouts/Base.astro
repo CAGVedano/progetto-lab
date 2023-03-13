@@ -8,7 +8,8 @@ const {
 	size=48,
 	navHeight=2,
 	useNav=true,
-	useFooter=true
+	useFooter=true,
+	title
 } = Astro.props
 
 // Used to calculate the min height for main element
@@ -29,7 +30,10 @@ const min_footer_height = 3
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Minecraft Theme</title>
+		<title>DnD Brainstorming {
+			title && (" | " + title)
+		}
+		</title>
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="stylesheet" href="/css/minecraft.css">
 	</head>

@@ -1,0 +1,32 @@
+---
+
+const { character } = Astro.props;
+
+const genderColor = character.gender == "femmina" ? "text-light-purple" : "text-blue";
+---
+
+<div class="map">
+    <div class="flex flex-col items-start md:items-center justify-center py-6 px-8">
+        <div class="transparent-panel h-80 w-full">
+            <img class="h-full w-full object-cover md:object-contain" src={character.avatar}/>
+        </div>
+        <h2 class="mt-6 capitalize place-self-center text-3xl font-black">{character.name} 
+        </h2>
+        {
+            character.gender && <span class={`text-base font-normal ${genderColor}`}>{character.gender}</span>
+        }
+        <div class="flex flex-col md:flex-row text-dark-gray my-6 md:space-x-2">
+            <div class="flex">
+                <div class="capitalize font-semibold">{character.race}</div><span class="mx-1">/</span>  
+                <div class="capitalize font-semibold">{character.class}</div><span class="hidden md:flex mx-1">-</span>  
+            </div>
+            <div class="capitalize">Background: {character.background}</div>
+        </div>
+        {
+            character.descrizione && 
+            <div class="book w-full">
+                {character.descrizione}
+            </div>
+        }
+    </div>
+</div>

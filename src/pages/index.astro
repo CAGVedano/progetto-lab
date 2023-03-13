@@ -1,5 +1,6 @@
 ---
-import CardPersonaggio from "~/components/CardPersonaggio.astro";
+import CharacterCard from "~/components/CharacterCard.astro";
+import CharacterPicker from "~/components/CharacterPicker.astro";
 import Base from "~/layouts/Base.astro";
 import Dice from "../components/Dice.astro";
 
@@ -14,10 +15,10 @@ const paintings = painting_files.map(file => {
     return file.default.split('/').pop().split('.')[0]
 });
 
-import { personaggi } from "../data/personaggi.js";
+import { characters } from "../data/characters.js";
 
-const getUrl = (personaggio) => {
-    return "/personaggi/" + personaggio.id;
+const getUrl = (character) => {
+    return "/characters/" + character.id;
 }
 ---
 
@@ -27,18 +28,18 @@ const getUrl = (personaggio) => {
     <div class="flex items-center justify-center">
         <ul>
             { 
-                personaggi.map((personaggio) => {
-                    return <li><a href={getUrl(personaggio)} >{personaggio.name}</a></li>
+                characters.map((character) => {
+                    return <li><a href={getUrl(character)} >{character.name}</a></li>
                 })
             }
         </ul>
     </div>
-    <div class="grid md:grid-cols-2 mt-6">
-        <div class="panel-dark h-5-block py-4 w-5-block mx-auto">
+    <div class="grid md:grid-cols-2 mt-6 gap-4">
+        <div class="panel-dark h-5-block py-4 w-6-block mx-auto">
             <Dice/>
         </div>
-        <div class="panel-dark h-5-block py-4 w-5-block mx-auto">
-            <Dice/>
+        <div class="panel-dark h-5-block py-4 w-6-block mx-auto">
+            <CharacterPicker/>
         </div>
     </div>
 </div>
