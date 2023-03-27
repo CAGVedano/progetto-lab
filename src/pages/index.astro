@@ -1,6 +1,7 @@
 ---
 import CharacterCard from "~/components/CharacterCard.astro";
 import CharacterPicker from "~/components/CharacterPicker.astro";
+import YTThumbnailDownloader from "~/components/YTThumbnailDownloader.astro";
 import Base from "~/layouts/Base.astro";
 import Dice from "../components/Dice.astro";
 
@@ -41,6 +42,9 @@ const getUrl = (character) => {
         <div class="panel-dark h-5-block py-4 w-6-block mx-auto">
             <CharacterPicker/>
         </div>
+    </div>
+    <div class="">
+        <YTThumbnailDownloader />
     </div>
 </div>
 </Base>

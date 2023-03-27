@@ -1,0 +1,44 @@
+<h3 class="text-center  underline text-4xl text-white">Youtube Thumbnail Downloader</h3>
+
+<div class="flex flex-col justify-center my-12 items-center">
+    <form id="ytForm" class="flex">
+        <input class="text-black h-1-block pl-2"
+            placeholder="Inserisci ID del video"
+            id="ytInput"
+        />
+        <button class="button py-2 px-4 text-lg whitespace-nowrap"
+            id="ytButton"
+        >Invia</button>
+    </form>
+    <img class="mt-12 w-full" id="ytImage" src=""/>
+</div>
+
+<script>
+    const ytInput = document.getElementById('ytInput');
+    const ytButton = document.getElementById('ytButton');
+    const ytImage = document.getElementById('ytImage');
+    const ytForm = document.getElementById('ytForm');
+    
+    var urlRoot = 'https://img.youtube.com/vi/';
+    var videoId = '';
+    var imgPath = '/0.jpg';
+
+    function getImage(e) {
+        e.preventDefault();
+        videoId = getVideoId(ytInput.value);
+        let imageSrc = urlRoot + videoId + imgPath;
+        ytImage.src= imageSrc;
+    }
+
+    function getVideoId(inputValue) {
+        let val = inputValue;
+        if(inputValue.startsWith('https://')) {
+            let inputUrl = new URL(inputValue);
+            val = inputUrl.searchParams.get('v');
+        }
+        return val;
+    }
+
+    ytButton.onclick = getImage;
+    ytForm.onsubmit = getImage;
+</script>
