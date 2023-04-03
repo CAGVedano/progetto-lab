@@ -16,7 +16,7 @@ export default defineConfig({
         public_folder: "/imgs/uploads",
         backend: {
           name: 'git-gateway',
-          branch: 'main',
+          branch: 'master',
         },
         collections: [
           {
